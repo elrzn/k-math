@@ -54,7 +54,7 @@ or2:{{:[x;x;y]}/x}
 / 0
 /   imp 1 1 1
 / 1
-imp:{f:{or(~x),y};f/x} / where f is an auxiliary binary function
+imp:{{:[~x;1;y]}/x}
 
 / Equivalence of P and Q is basically the conjunction of the
 / implication of P and Q and the implication of Q and P. The outcome
