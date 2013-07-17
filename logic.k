@@ -55,3 +55,19 @@ or2:{{:[x;x;y]}/x}
 /   imp 1 1 1
 / 1
 imp:{f:{or(~x),y};f/x} / where f is an auxiliary binary function
+
+/ Equivalence of P and Q is basically the conjunction of the
+/ implication of P and Q and the implication of Q and P. The outcome
+/ should be true if and only if both elements have the same truth
+/ value.
+/ The reason why we can't use an auxiliary binary function is that
+/ applying and/0 0 0 would yield and/0 1 and therefore fail.
+/ Example:
+/   iff 0 1 0
+/ 0
+/   iff 0 0 0
+/ 1
+/   iff 1 1 1
+/ 1
+and:{r:+/{~x=0}/x;:[r=#x;1;~r]}
+iff:and
