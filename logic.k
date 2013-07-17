@@ -20,4 +20,19 @@ not:{~x}
 / 1
 conj:{*/{~x=0}/x}
 
-/ and:{s:+/x;(0=s)|s=#x}
+/ Disjunction of x: True as long as there is a true element.
+/   P Q | P v Q
+/   t t |   t
+/   t f |   t
+/   f t |   t
+/   f f |   f
+/ The disjunction is basically the good old 'or' in most programming
+/ languages.
+/ Example:
+/   or 1 1 1
+/ 1
+/   or 1 0 1
+/ 1
+/   or 0 0 0
+/ 0
+or:{:[(+/x)=0;0;1]}
