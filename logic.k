@@ -36,3 +36,21 @@ conj:{*/{~x=0}/x}
 /   or 0 0 0
 / 0
 or:{:[(+/x)=0;0;1]}
+
+/ Implication of P and Q, where P is the antecedent and Q is the
+/ consequent, should be false only if the antecedent is true and the
+/ consequent is false, which results in the weird following truth
+/ table:
+/   P  Q | P => Q
+/   1  1 |    1
+/   1  0 |    0
+/   0  1 |    1
+/   0  0 |    0
+/ Example:
+/   imp 1 0
+/ 0
+/   imp 1 1 0
+/ 0
+/   imp 1 1 1
+/ 1
+imp:{f:{or(~x),y};f/x} / where f is an auxiliary binary function
