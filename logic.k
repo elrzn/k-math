@@ -36,6 +36,7 @@ conj:{*/{~x=0}/x}
 /   or 0 0 0
 / 0
 or:{:[(+/x)=0;0;1]}
+or2:{{:[x;x;y]}/x}
 
 / Implication of P and Q, where P is the antecedent and Q is the
 / consequent, should be false only if the antecedent is true and the
