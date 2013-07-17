@@ -61,7 +61,7 @@ imp:{f:{or(~x),y};f/x} / where f is an auxiliary binary function
 / should be true if and only if both elements have the same truth
 / value.
 / The reason why we can't use an auxiliary binary function is that
-/ applying and/0 0 0 would yield and/0 1 and therefore fail.
+/ applying and/0 0 0 would reduce to and[0;1] and therefore fail.
 / Example:
 /   iff 0 1 0
 / 0
